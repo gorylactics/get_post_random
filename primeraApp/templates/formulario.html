@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>este es el formulario</h1>
+    <h2>{{nombre}}</h2>
+
+    <form action="/formulario/" method="post">
+        <!-- el metodo GET es solo para mostar o recuperar informacion y el metodo POST es solo para GUARDAR INFORMACION -->
+        <!-- action="/get_o_post/" es la funcion en el archivo views.py y la ruta en urls.py donde se guardaran los datos -->
+        {% csrf_token %}
+        <!-- esto genera un token automatico para evitar falsificaciones de piratas -->
+        <p>Campo Uno: <input name="datoUno" type="text"></p>
+        <!-- name="datoUno" es el dato que se guarda 'name es el nombre que usa el backend para asociar el dato con el front' -->
+        <p>Campo Dos: <input name="datoDos" type="text"></p>
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>
